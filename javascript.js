@@ -1,7 +1,8 @@
 $(document).ready(function() {
+    let history;
     window.addEventListener('load', function() {
-        let history=(!JSON.parse(localStorage.getItem("Search-history")))?
-        JSON.parse(localStorage.getItem("Search-history")):[];
+        history=(JSON.parse(localStorage.getItem("Search-history")));
+        
     });
    
     let cities=[];
