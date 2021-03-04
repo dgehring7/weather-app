@@ -21,6 +21,12 @@ $(document).ready(function() {
        .then((response)=>response.json())
        .then((data)=>{
            console.log(data);
+           let humidity = data.main.humidity
+           let temp = data.main.temp
+
+
+
+           $("#current-humidity").html(humidity);
            let futureForcastElem = document.querySelector("#future-forcast");
            futureForcastElem.innerHTML = '<h4 class="mt-2">5-Day Future Forcast</h4>'
 

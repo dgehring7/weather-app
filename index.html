@@ -23,11 +23,19 @@
                 <input class="form-control" type="text" id="search-city"/>
                 <button class="btn btn-primary" id="search-btn"><i class="fa fa-search"></i></button>
             </div>
-            <ul class="list-group"></ul>
+            <ul class="list-group" id="saved-searches"></ul>
         </aside>
 
         <div class="col-lg-8">
-            <div id="current-day" class="mt-2"></div>
+            <div id="current-day" class="mt-2">
+                <p>Current Temp: <span id="current-temp"></span></p>
+                <p>Humidity: <span id="current-humidity"></span></p>
+                <p>Wind Speed: <span id="current-windspeed"></span></p>
+                <p>UV Index: <span id="current-uvindex"></span></p>
+                <p>Real Feel: <span id="current-feelslike"></span></p>
+                <img src="" alt="Description of image" id="current-weather-logo">
+
+            </div>
             <div id="future-forcast" class="row mt-2">
             </div>
         </div>
