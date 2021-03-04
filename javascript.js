@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
    function getWeatherForcast(city) {
        if (city === null) {
-           console.log("test")
+        //    console.log("test")
            return;
        }
        let owmEndpoint="http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=60123747790be0a2e989708c4e9c45d6";
@@ -23,10 +23,17 @@ $(document).ready(function() {
            console.log(data);
            let humidity = data.main.humidity
            let temp = data.main.temp
+           let uv = data.main
+           let windSpeed = data.wind[1];
+           let realFeel = data.main.feels_like
 
+            // Calling values from API call
+            $("#current-temp").html(temp);
+            $("#current-humidity").html(humidity);
+            $("#current-windspeed").html(windSpeed);
+            $("#current-feelslike").html(realFeel);
+           
 
-
-           $("#current-humidity").html(humidity);
            let futureForcastElem = document.querySelector("#future-forcast");
            futureForcastElem.innerHTML = '<h4 class="mt-2">5-Day Future Forcast</h4>'
 
