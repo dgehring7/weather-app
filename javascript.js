@@ -16,7 +16,7 @@ $(document).ready(function() {
         //    console.log("test")
            return;
        }
-       let owmEndpoint="http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=60123747790be0a2e989708c4e9c45d6";
+       let owmEndpoint="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=60123747790be0a2e989708c4e9c45d6";
        fetch(owmEndpoint)
        .then((response)=>response.json())
        .then((data)=>{
