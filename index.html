@@ -34,7 +34,9 @@
                 <p>UV Index: <span id="current-uvindex"></span></p>
                 <p>Real Feel: <span id="current-feelslike"></span></p>
                 <p><span id="weather-icon"></span></p>
+                <!-- <img src="http://openweathermap.org/img/w/01n.png" alt="Description of image" id="current-weather-logo"> -->
                 <img src="" alt="Description of image" id="current-weather-logo">
+
 
             </div>
             <div id="future-forcast" class="row mt-2">
@@ -46,3 +48,11 @@
 <script src="javascript.js"></script>
 </body>
 </html>
+<!-- After it you should concatenate this var iconcode with the url that contains the icons, like:
+
+var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+
+Finally just change src attribute in the DOM by doing this:
+
+$('#wicon').attr('src', iconurl); -->
+

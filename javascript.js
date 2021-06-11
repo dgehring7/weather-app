@@ -17,23 +17,26 @@ $(document).ready(function() {
            return;
        }
        let owmEndpoint="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=60123747790be0a2e989708c4e9c45d6";
+       let fiveDayEndpoint = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=60123747790be0a2e989708c4e9c45d6";
        fetch(owmEndpoint)
        .then((response)=>response.json())
        .then((data)=>{
-           console.log(data);
+           console.log("data", data);
            let humidity = data.main.humidity;
            let temp = data.main.temp;
            let uv = data.main;
            let windSpeed = data.wind.speed;
            let realFeel = data.main.feels_like;
            let weatherIcon = data.weather[0].icon;
+           let iconurl = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
 
             // Calling values from API call
             $("#current-temp").html(temp);
             $("#current-humidity").html(humidity);
             $("#current-windspeed").html(windSpeed);
             $("#current-feelslike").html(realFeel);
-            $("#weather-icon").html(weatherIcon);
+            // $("#weather-icon").html(weatherIcon);
+            $("#current-weather-logo").attr('src', iconurl);
            
 
            let futureForcastElem = document.querySelector("#future-forcast");
@@ -51,6 +54,12 @@ $(document).ready(function() {
                     cardElm.classList.add('card', 'bg-primary', 'text-white');
                 }
             }
+            fetch(fiveDayEndpoint)
+            .then((fiveDayResponse) => fiveDayResponse.json())
+            .then((fiveDayData) => {
+                console.log("fiveDayData", fiveDayData);
+            
+            })
        })
    }
 // Load local storage
